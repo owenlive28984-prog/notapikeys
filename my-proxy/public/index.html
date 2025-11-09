@@ -1,0 +1,13 @@
+export default {
+  async fetch(request, env) {
+    // Call your real API, using the secret key stored in Cloudflare
+    const response = await fetch("https://api.example.com/data", {
+      headers: {
+        Authorization: `Bearer ${env.API_KEY}`,
+      },
+    });
+
+    // Pass the API response back to the Windows app
+    return new Response(await response.text(), { status: response.status });
+  },
+};

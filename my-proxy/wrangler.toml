@@ -1,0 +1,5 @@
+name = "my-proxy"
+main = "src/index.js"
+compatibility_date = "2025-11-06"
+workers_dev = false
+preview_urls = false

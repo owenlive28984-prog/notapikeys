@@ -1,6 +1,13 @@
-﻿{
-  "name": "tauri-proxy",
+{
+  "name": "languaro-website",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "dev": "vercel dev" }
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "stripe": "^14.0.0"
+  }
 }
