@@ -5,8 +5,8 @@
  * paying customers to the Supabase users table.
  * 
  * Environment variables required:
- * - SUPABASE_URL: Your Supabase project URL
- * - SUPABASE_SERVICE_ROLE_KEY: Service role key (has write access)
+ * - SUPABASE_LICENSING_URL: Your Supabase project URL for licensing
+ * - USERS_SUPABASE_SERVICE_ROLE_KEY: Service role key (has write access)
  * - STRIPE_WEBHOOK_SECRET: Stripe webhook signing secret (optional but recommended)
  */
 
@@ -15,8 +15,8 @@ import { createClient } from '@supabase/supabase-js';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
 const supabase = createClient(
-  process.env.SUPABASE_URL || '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+  process.env.SUPABASE_LICENSING_URL || '',
+  process.env.USERS_SUPABASE_SERVICE_ROLE_KEY || ''
 );
 
 export default async function handler(req, res) {

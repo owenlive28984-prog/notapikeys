@@ -5,16 +5,16 @@
  * or as a backup if webhooks fail.
  * 
  * Environment variables required:
- * - SUPABASE_URL: Your Supabase project URL
- * - SUPABASE_SERVICE_ROLE_KEY: Service role key (has write access)
+ * - SUPABASE_LICENSING_URL: Your Supabase project URL for licensing
+ * - USERS_SUPABASE_SERVICE_ROLE_KEY: Service role key (has write access)
  * - ADMIN_SECRET: A secret password to protect this endpoint
  */
 
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
-  process.env.SUPABASE_URL || '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+  process.env.SUPABASE_LICENSING_URL || '',
+  process.env.USERS_SUPABASE_SERVICE_ROLE_KEY || ''
 );
 
 export default async function handler(req, res) {
